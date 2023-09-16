@@ -23,6 +23,11 @@
         border-radius: 10px;
 
     }
+    .card-body{
+        background-color: beige;
+        border-color: black;
+        border-radius: 20px;
+    }
 </style>
 <body style="background-color: #F6F8FF;">
     <nav class="navbar" style="background-color: #FFEEF2;">
@@ -36,9 +41,24 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h1 class="text-black">Top 50 Books</h1>
+            <div class="col-md-12">
+                <h1 class="text-black">Top 20 Books</h1>
             </div>
+            {% for i in range(book_name | length) %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{image[i]}}">
+                            <h4 class="text-black">{{book_name[i]}}</h4>
+                            <h4 class="text-black">{{author[i]}}</h4>
+                            <h4 class="text-black">Votes- {{votes[i]}}</h4>
+                            <h4 class="text-black">Rating- {{rating[i]}}</h4>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
         </div>
     </div>
 </body>
