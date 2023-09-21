@@ -8,36 +8,38 @@
 <style>
     .navbar{
         height: fit-content;
-        padding-top: 40px;
+        padding-top: 30px;
         width:auto;
     }
     .text-black{
         color: black;
         align-items: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     .container{
-        background-color:#FFEEF2;
+        margin-top: 50px;
+        background-color:#cfd3b7;;
         width: 1200px;
         height: auto;
-        border: 10cm;
-        border-radius: 10px;
-
+        border-radius: 2px;
+        box-shadow: inset;
     }
     .card-body{
         padding: 20px;
         margin: 10px;
         height: 450px;
-        background-color: rgb(52, 48, 53);
+        background-color:#F6F8FF;
         border-color: black;
-        border-radius: 10px;
+        border-radius: 5px;
+        box-shadow: 10px 10px black;
     }
 </style>
-<body style="background-color: #F6F8FF;">
-    <nav class="navbar" style="background-color: #FFEEF2;">
+<body style="background-color: rgb(52, 48, 53)">
+    <nav class="navbar" style="background-color: #cfd3b7;">
         <a class="navbar-brand">My book recommender</a>
         <ul class="nav navbar-nav">
-            <li><a>Home</a></li>
-            <li><a>Recommend</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
             <li><a>Contact</a></li>
         </ul>
     </nav>
@@ -45,17 +47,17 @@
     <div class="container">
         <div class="row-md-20">
             <div class="col-md-12">
-                <h1 class="text-black">Top 20 Books</h1>
+                <h1 class="text-black">Top 20 Books</h1> 
             </div>
             {% for i in range(book_name | length) %}
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="card" style="margin-top: 40px;">
                         <div class="card-body">
-                            <img class="card-img-top" src="{{image[i]}}">
-                            <h4 class="text-black">{{book_name[i]}}</h4>
-                            <h4 class="text-black">{{author[i]}}</h4>
-                            <h4 class="text-black">Votes- {{votes[i]}}</h4>
-                            <h4 class="text-black">Rating- {{rating[i]}}</h4>
+                            <img class="card-img-top" src="{{image[i]}}" style="margin-bottom: 40px;">
+                            <h4 class="text-black">Book Name: {{book_name[i]}}</h4>
+                            <h4 class="text-black">Author: {{author[i]}}</h4>
+                            <h4 class="text-black">Votes: {{votes[i]}}</h4>
+                            <h4 class="text-black">Rating: {{rating[i]}}</h4>
 
                         </div>
                     </div>
